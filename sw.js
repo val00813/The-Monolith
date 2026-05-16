@@ -1,4 +1,4 @@
-let GHPATH = '/The-Monolith'; 
+let GHPATH = '/The-Monolith';
 
 let APP_PREFIX = 'monolith_'; 
 
