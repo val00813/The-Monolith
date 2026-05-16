@@ -12,7 +12,7 @@ To survive the compression, users must use their voice. Speaking or shouting gen
 3. Speak, sing, or shout to push the walls away and trigger the generative bloom effects.
 
 ### How to Run
-Open the link below in your browser: https://github.com/val00813/The-Monolith
+Open the link below in your browser: https://val00813.github.io/The-Monolith/
 
 ### Tools Used
 1.Three.js** (3D WebGL Rendering & Post-processing)
