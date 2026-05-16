@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+canvas {
+    display: block;
+}
+#intro {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    letter-spacing: 2px;
+    z-index: 10; 
+    cursor: pointer;
+    pointer-events: none;
+}
