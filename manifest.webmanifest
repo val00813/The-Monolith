@@ -1,7 +1,7 @@
 {
-  "name": "The Monolith",
+  "name": "/The-Monolith",
   "short_name": "Monolith",
-  "start_url": "/The Monolith/index.html",
+  "start_url": "/The-Monolith/index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
