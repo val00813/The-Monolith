@@ -83,11 +83,16 @@ document.addEventListener('click', async () => {
     if(isSystemActive) return; 
     
     try {
+        // base audio routing adapted from MDN Web Audio API documentation
+        // https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
+        // https://developer.mozilla.org/zh-CN/docs/Web/API/AnalyserNode/getByteFrequencyData
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         const source = audioContext.createMediaStreamSource(stream);   //request microphone permission
+        
         analyser = audioContext.createAnalyser(); 
         analyser.fftSize = 256;
+
         source.connect(analyser);
         dataArray = new Uint8Array(analyser.frequencyBinCount);
         
@@ -119,6 +124,7 @@ function animate() {
             rawVolume = 0; 
         }  //filter out noise
 
+        // generated a volume smoothing formula using Gemini
         smoothedVolume += (rawVolume - smoothedVolume) * 0.1; 
         volume = smoothedVolume;
 
@@ -136,6 +142,7 @@ function animate() {
         isCrushed = true;
     }
 
+    // the compression and rebound of the wall are achieved using a Lerp to create an elastic animation effect
     const wallSmoothingFactor = 0.05; 
     currentWallDisplayDistance += (calculatedTarget - currentWallDisplayDistance) * wallSmoothingFactor;  //add weight to walls
 
@@ -145,6 +152,7 @@ function animate() {
     walls[3].position.x = currentWallDisplayDistance;
 
     // b. the effect of particles
+    //Use AI to modify the formula that maps ‘wall distance’ to ‘particle scale’
     const compressionRatio = (currentWallDisplayDistance - minCrushDistance) / (baseDistance - minCrushDistance);
     const minScale = 0.3; 
     const maxScale = 1.0; 

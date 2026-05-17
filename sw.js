@@ -1,3 +1,6 @@
+//The foundational structure of this Service Worker is adapted from standard PWA deployment tutorials and boilerplates.
+//https://github.com/rebecca-aston/creatures-web-app-simple
+
 let GHPATH = '/The-Monolith';
 
 let APP_PREFIX = 'monolith_'; 
